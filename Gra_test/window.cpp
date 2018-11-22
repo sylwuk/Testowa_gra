@@ -2,7 +2,8 @@
 #include "window.h"
 
 
-app::window::window(HINSTANCE hInstance)
+app::window::window(HINSTANCE hInstance, int windowHeight, int windowWidth, float scrDepth, float scrNear) :
+	height(windowHeight), width(windowWidth), screendepth(scrDepth), screennear(scrNear)
 {
 	LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
 	LoadStringW(hInstance, IDC_GRATEST, szWindowClass, MAX_LOADSTRING);
@@ -61,7 +62,7 @@ BOOL app::window::InitInstance(HINSTANCE hInstance, int nCmdShow)
 	}
 
 	ShowWindow(hWnd, nCmdShow);
-	pD3d = std::make_unique<graphics::d3d>(hWnd);
+	pD3d = std::make_unique<graphics::d3d>(hWnd, width, height, false, false, screendepth, screennear);
 	UpdateWindow(hWnd);
 
 	return TRUE;

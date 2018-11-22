@@ -18,7 +18,7 @@ namespace app
 	{
 	public:
 		window() = delete;
-		window(HINSTANCE hInstance);
+		window(HINSTANCE hInstance, int windowHeight, int windowWidth, float scrDepth, float scrNear);
 		~window();
 		ATOM MyRegisterClass(HINSTANCE hInstance);
 		BOOL InitInstance(HINSTANCE hInstance, int nCmdShow);
@@ -28,5 +28,7 @@ namespace app
 		WCHAR szTitle[MAX_LOADSTRING];                  // The title bar text
 		WCHAR szWindowClass[MAX_LOADSTRING];            // the main window class name
 		std::unique_ptr<graphics::d3d> pD3d;
+		int height{}, width{};
+		float screendepth{}, screennear{};
 	};
 }
