@@ -20,6 +20,12 @@ namespace graphics
 	class d3d
 	{
 	public:
+		enum class d3delems : short
+		{
+			swapchain, device, devicecontext, backbuffer, depthstencilbuffer,
+			depthstencilstate, depthstencilview, rasterstate, all
+		};
+
 		d3d() = delete;
 		d3d(HWND hWnd,
 			int screenWidth,
@@ -31,6 +37,7 @@ namespace graphics
 		~d3d();
 		void RenderFrame(void);
 	private:
+		void cleanup(d3delems start);
 		bool vsyncflag{};
 		int videomemory{};
 		char videocarddesc[MAX_NAMESTRING];
