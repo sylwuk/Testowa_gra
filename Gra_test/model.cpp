@@ -170,6 +170,6 @@ namespace graphics
 			vertexbuff = nullptr;
 		}
 
-		return
+		return;
 	}
 }
