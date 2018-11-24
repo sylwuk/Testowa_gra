@@ -1,4 +1,4 @@
-// window.h : include file for system specific operations like
+// window.h : include file for window specific operations like
 // creating and registering a main window
 #pragma once
 

@@ -151,6 +151,7 @@
   <ItemGroup>
     <ClInclude Include="d3d.h" />
     <ClInclude Include="Gra_test.h" />
+    <ClInclude Include="model.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="window.h" />
@@ -159,6 +160,7 @@
   <ItemGroup>
     <ClCompile Include="d3d.cpp" />
     <ClCompile Include="Gra_test.cpp" />
+    <ClCompile Include="model.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -173,6 +175,10 @@
   <ItemGroup>
     <Image Include="Gra_test.ico" />
     <Image Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="color.ps" />
+    <None Include="color.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,3 +1,4 @@
+// window.cpp : definitions for windows.h file
 #include "stdafx.h"
 #include "window.h"
 

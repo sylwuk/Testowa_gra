@@ -416,10 +416,23 @@ namespace graphics
 		// clear the back buffer to a deep blue
 		devcon->ClearRenderTargetView(backbuffer, D3DXCOLOR(0.0f, 0.2f, 0.4f, 1.0f));
 
+		// Clear the depth buffer.
+		devcon->ClearDepthStencilView(depthstencilview, D3D11_CLEAR_DEPTH, 1.0f, 0);
+
 		// do 3D rendering on the back buffer here
 
 		// switch the back buffer and the front buffer
-		swapchain->Present(0, 0);
+		// Present the back buffer to the screen since rendering is complete.
+		if (vsyncflag)
+		{
+			// Lock to screen refresh rate.
+			swapchain->Present(1, 0);
+		}
+		else
+		{
+			// Present as fast as possible.
+			swapchain->Present(0, 0);
+		}
 	}
 
 	void d3d::cleanup(d3delems start)

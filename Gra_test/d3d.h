@@ -1,4 +1,4 @@
-
+// d3d.h : include file for directx functionalities
 #pragma once
 
 #include <dxgi.h>
