@@ -24,7 +24,8 @@ namespace graphics
 		IDXGIFactory* factory{};
 		IDXGIAdapter* adapter{};
 		IDXGIOutput* adapterOutput{};
-		UINT numModes{}, i{}, numerator{}, denominator{}, stringLength{};
+		UINT numModes{}, i{}, numerator{}, denominator{};
+		size_t stringLength{};
 		DXGI_MODE_DESC* displayModeList{};
 		DXGI_ADAPTER_DESC adapterDesc{};
 		D3D_FEATURE_LEVEL featureLevel{};
