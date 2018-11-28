@@ -168,7 +168,6 @@ namespace graphics
 		scd.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;     // use 32-bit color
 		scd.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;      // how swap chain is to be used
 		scd.OutputWindow = hWnd;                                // the window to be used
-		scd.SampleDesc.Count = 4;                               // how many multisamples
 		scd.Windowed = TRUE;                                    // windowed/full-screen mode
 		scd.BufferDesc.Height = screenHeight;
 		scd.BufferDesc.Width = screenWidth;

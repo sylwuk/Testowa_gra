@@ -148,7 +148,7 @@ namespace graphics
 		devcon->IASetVertexBuffers(0, 1, &vertexbuff, &stride, &offset);
 
 		// Set the index buffer to active in the input assembler so it can be rendered.
-		devcon->IASetIndexBuffer(vertexbuff, DXGI_FORMAT_R32_UINT, 0);
+		devcon->IASetIndexBuffer(indexbuff, DXGI_FORMAT_R32_UINT, 0);
 
 		// Set the type of primitive that should be rendered from this vertex buffer, in this case triangles.
 		devcon->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
