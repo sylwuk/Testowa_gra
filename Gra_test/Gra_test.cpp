@@ -14,7 +14,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     UNREFERENCED_PARAMETER(lpCmdLine);
 
     // TODO: Place code here.
-	app::window CurrentWindow(hInstance, 800, 600, 0, 0);
+	app::window CurrentWindow(hInstance, 800, 600);
 
     // Initialize global strings
 	CurrentWindow.MyRegisterClass(hInstance);

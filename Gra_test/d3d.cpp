@@ -409,20 +409,27 @@ namespace graphics
 			static_cast<FLOAT>(screenHeight),
 			screenNear,
 			screenDepth);
-}
+	}
 
-	// this is the function used to render a single frame
-	void d3d::RenderFrame()
+	void d3d::BeginScene(FLOAT red, FLOAT green, FLOAT blue, FLOAT alpha)
 	{
-		// clear the back buffer to a deep blue
-		devcon->ClearRenderTargetView(backbuffer, D3DXCOLOR(0.0f, 0.2f, 0.4f, 1.0f));
+		FLOAT color[4];
+
+		// Setup the color to clear the buffer to.
+		color[0] = red;
+		color[1] = green;
+		color[2] = blue;
+		color[3] = alpha;
+
+		// Clear the back buffer.
+		devcon->ClearRenderTargetView(backbuffer, color);
 
 		// Clear the depth buffer.
 		devcon->ClearDepthStencilView(depthstencilview, D3D11_CLEAR_DEPTH, 1.0f, 0);
+	}
 
-		// do 3D rendering on the back buffer here
-
-		// switch the back buffer and the front buffer
+	void d3d::EndScene()
+	{
 		// Present the back buffer to the screen since rendering is complete.
 		if (vsyncflag)
 		{
@@ -434,6 +441,33 @@ namespace graphics
 			// Present as fast as possible.
 			swapchain->Present(0, 0);
 		}
+	}
+
+	ID3D11Device* d3d::getDevice()
+	{
+		return dev;
+	}
+
+	ID3D11DeviceContext* d3d::GetDeviceContext()
+	{
+		return devcon;
+	}
+
+	void d3d::GetProjectionMatrix(D3DXMATRIX& projectionMatrix)
+	{
+		projectionMatrix = projectionmatrix;
+	}
+
+
+	void d3d::GetWorldMatrix(D3DXMATRIX& worldMatrix)
+	{
+		worldMatrix = worldmatrix;
+	}
+
+
+	void d3d::GetOrthoMatrix(D3DXMATRIX& orthoMatrix)
+	{
+		orthoMatrix = orthomatrix;
 	}
 
 	void d3d::cleanup(d3delems start)

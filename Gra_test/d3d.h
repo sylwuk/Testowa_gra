@@ -35,7 +35,23 @@ namespace graphics
 			float screenDepth,
 			float screenNear);
 		~d3d();
-		void RenderFrame(void);
+
+		// BeginScene will be called whenever we are going to draw a new 3D scene
+		// at the beginning of each frame.
+		// All it does is initializes the buffers so they are blank and ready to be drawn to.
+		void BeginScene(FLOAT red, FLOAT green, FLOAT blue, FLOAT alpha);
+
+		// Endscene tells the swap chain to display the 3D scene
+		// once all the drawing has completed at the end of each frame.
+		void EndScene();
+		ID3D11Device* getDevice();
+		ID3D11DeviceContext* GetDeviceContext();
+
+		// Most shaders will need these matrices for rendering so
+		// there needed to be an easy way for outside objects to get a copy of them.
+		void GetProjectionMatrix(D3DXMATRIX& projectionMatrix);
+		void GetWorldMatrix(D3DXMATRIX& worldMatrix);
+		void GetOrthoMatrix(D3DXMATRIX& orthoMatrix);
 	private:
 		void cleanup(d3delems start);
 		bool vsyncflag{};

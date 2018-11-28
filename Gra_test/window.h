@@ -4,7 +4,7 @@
 
 #include "stdafx.h"
 #include "resource.h"
-#include "d3d.h"
+#include "graphics.h"
 #include <memory>
 
 namespace app
@@ -18,7 +18,7 @@ namespace app
 	{
 	public:
 		window() = delete;
-		window(HINSTANCE hInstance, int windowHeight, int windowWidth, float scrDepth, float scrNear);
+		window(HINSTANCE hInstance, int windowHeight, int windowWidth);
 		~window();
 		ATOM MyRegisterClass(HINSTANCE hInstance);
 		BOOL InitInstance(HINSTANCE hInstance, int nCmdShow);
@@ -27,8 +27,7 @@ namespace app
 		HINSTANCE hInst{};                              // current instance
 		WCHAR szTitle[MAX_LOADSTRING];                  // The title bar text
 		WCHAR szWindowClass[MAX_LOADSTRING];            // the main window class name
-		std::unique_ptr<graphics::d3d> pD3d;
-		int height{}, width{};
-		float screendepth{}, screennear{};
+		std::unique_ptr<graphics::graphics> m_graphics;
+		INT height{}, width{};
 	};
 }

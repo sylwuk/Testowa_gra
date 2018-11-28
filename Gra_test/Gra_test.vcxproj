@@ -149,7 +149,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="camera.h" />
+    <ClInclude Include="colorshader.h" />
     <ClInclude Include="d3d.h" />
+    <ClInclude Include="graphics.h" />
     <ClInclude Include="Gra_test.h" />
     <ClInclude Include="model.h" />
     <ClInclude Include="Resource.h" />
@@ -158,7 +161,10 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="camera.cpp" />
+    <ClCompile Include="colorshader.cpp" />
     <ClCompile Include="d3d.cpp" />
+    <ClCompile Include="graphics.cpp" />
     <ClCompile Include="Gra_test.cpp" />
     <ClCompile Include="model.cpp" />
     <ClCompile Include="stdafx.cpp">

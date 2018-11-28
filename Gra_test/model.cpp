@@ -172,4 +172,9 @@ namespace graphics
 
 		return;
 	}
+
+	int model::GetIndexCount()
+	{
+		return indexcnt;
+	}
 }
